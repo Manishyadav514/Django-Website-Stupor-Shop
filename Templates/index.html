@@ -1,4 +1,6 @@
 {% load static %}
+#To tackle the problem of jinja format inside the jinja format.
+{% static "images" as baseUrls %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -233,6 +235,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<!-- Destinations -->
 	<div class="destinations" id="destinations">
 		<div class="container">
@@ -245,79 +248,23 @@
 			<div class="row destinations_row">
 				<div class="col">
 					<div class="destinations_container item_grid">
-
+						
+						{% for dest in dests %}
 						<!-- Destination -->
 						<div class="destination item">
 							<div class="destination_image">
-								<img src="{% static 'images/destination_1.jpg' %}" alt="">
+								# You cannot use jinja format inside the jinja format
+								<img src="{{baseUrls}}/{{dest.img}}" alt="">
 								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
 							</div>
 							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">{{dest1.name}}</a></div>
-								<div class="destination_subtitle"><p>{{dest1.desc}}</p></div>
-								<div class="destination_price">From ₹{{dest1.price}}</div>
+								<div class="destination_title"><a href="destinations.html">{{dest.name}}</a></div>
+								<div class="destination_subtitle"><p>{{dest.desc}}</p></div>
+								<div class="destination_price">From ₹{{dest.price}}</div>
 							</div>
 						</div>
 
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_2.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">Indonesia</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_3.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">San Francisco</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_4.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">Paris</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_5.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">Phi Phi Island</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="{% static 'images/destination_6.jpg' %}" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title"><a href="destinations.html">Mykonos</a></div>
-								<div class="destination_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
+						{% endfor %}
 
 					</div>
 				</div>
