@@ -1,5 +1,5 @@
 {% load static %}
-#To tackle the problem of jinja format inside the jinja format.
+
 {% static "images" as baseUrls %} 
 <!DOCTYPE html>
 <html lang="en">
@@ -103,7 +103,7 @@
 				
 				<!-- Slide -->
 				<div class="owl-item">
-					<div class="background_image" style="background-image:url(images/home_slider.jpg)"></div>
+					<div class="background_image" style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
 					<div class="home_slider_content_container">
 						<div class="container">
 							<div class="row">
@@ -119,13 +119,13 @@
 
 				<!-- Slide -->
 				<div class="owl-item">
-					<div class="background_image" style="background-image:url(images/home_slider.jpg)"></div>
+					<div class="background_image" style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
 					<div class="home_slider_content_container">
 						<div class="container">
 							<div class="row">
 								<div class="col">
 									<div class="home_slider_content">
-										<div class="home_title"><h2>Let us take you away</h2></div>
+										<div class="home_title"><h2>Manish will take you away</h2></div>
 									</div>
 								</div>
 							</div>
@@ -135,7 +135,7 @@
 
 				<!-- Slide -->
 				<div class="owl-item">
-					<div class="background_image" style="background-image:url(images/home_slider.jpg)"></div>
+					<div class="'background_image" style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
 					<div class="home_slider_content_container">
 						<div class="container">
 							<div class="row">
@@ -189,7 +189,7 @@
 	<!-- Intro -->
 
 	<div class="intro">
-		<div class="intro_background" style="background-image:url(images/intro.png)"></div>
+		<div class="intro_background" style="background-image:url({% static 'images/intro.png' %})"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -254,7 +254,7 @@
 						<div class="destination item">
 							<div class="destination_image">
 								<!You cannot use jinja format inside the jinja format>
-								<img src="{{baseUrls}}/{{dest.img}}" alt="">
+								<img src="{{dest.img.url}}" alt="">
 								
 								{% if dest.offer %}
 								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
