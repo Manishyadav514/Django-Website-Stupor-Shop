@@ -45,10 +45,16 @@ def register(request):
                 user=User.objects.create_user(username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
                 user.save();
                 print('user created')
-                return redirct ('login')
+                return redirect ('login')
         else:
             messages.info(request,'Passwords do not match')
             return redirect('register')
         return redirect( '/')
     else:
         return render(request,'register.html')
+
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
