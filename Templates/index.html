@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Divine Shop-Manish | Home :: w3layouts</title>
+<title>Stupor Shop-Manish | Home :: w3layouts</title>
 <!--/tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -38,15 +38,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<ul>
 			<nav class="main_nav">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li> <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In </a></li>
-					<li> <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>					
-					
+					<li> <a href="#" data-toggle="modal" data-target="#myModal"></i> Sign In </a></li>
+					<li> <a href="#" data-toggle="modal" data-target="#myModal2"></i> Sign Up </a></li>
 					{% if user.is_authenticated %}
 					<li> Hello, {{user.first_name}}</li>
 					<li><a href="account/logout">Logout</a></li>
 					{% else%}
-					<li><a href="account/register">Register</a></li>
-					<li><a href="account/login">Login</a></li>
+					<li><a href="account/register"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sign up</a></li>
+					<li><a href="account/login"> <i class="fa fa-unlock-alt" aria-hidden="true"></i>Sign in</a></li>
 					{% endif %}
 
 					<li><i class="fa fa-phone" aria-hidden="true"></i> Contact : 6393241779</li>
@@ -81,7 +80,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!-- header-bot -->
 			<div class="col-md-4 logo_agile">
-				<h1><a href="index.html"><span>D</span>ivine Shop <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
+				<h1><a href="index.html"><span>S</span>tupor Shop <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
 			</div>
         <!-- header-bot -->
 		<div class="col-md-4 agileits-social top_content">
@@ -350,7 +349,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																  <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a></li>
 														</ul>
 														<div class="clearfix"></div>
-														<p><a href="#">By clicking register, I agree to your terms</a></p>
+														<p><a href="#">Good day is waiting for you</a></p>
 
 						</div>
 						<div class="col-md-4 modal_body_right modal_body_right1">
@@ -566,20 +565,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="destination item">
 							<div class="destination_image">
 								<!You cannot use jinja format inside the jinja format>
-								<img src="{{dest.img.url}}" alt="">
-								
+								<img src="{{dest.img.url}}" alt="">	
 								{% if dest.offer %}
 								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
 								{% endif %}
-
 							</div>
 							<div class="destination_content">
 								<div class="destination_title"><a href="destinations.html">{{dest.name}}</a></div>
-								<div class="destination_subtitle"><p>{{dest.desc}}</p></div>
-								<div class="destination_price">From ₹{{dest.price}}</div>
+								<div class="destination_subtitle"><p>{{dest.price}}</p></div>
+								<div class="destination_price">From ₹{{dest.delete}}</div>
 							</div>
 						</div>
-
 						{% endfor %}
 
 					</div>
@@ -699,10 +695,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									
 									
 									<div class="item-info-product ">
-										<h4><a href="single.html">Formal Blue Shirt</a></h4>
+										<h4><a href="single.html">{{dest1.name}}</a></h4>
 										<div class="info-product-price">
-											<span class="item_price">$45.99</span>
-											<del>$69.71</del>
+											<span class="item_price">${{dest1.price}}</span>
+											<del>${{dest1.delete}}</del>
 										</div>
 										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 															<form action="#" method="post">
@@ -720,7 +716,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																</fieldset>
 															</form>
 														</div>
-							
 									</div>
 								</div>
 							</div>
@@ -2039,9 +2034,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer_agile_inner_info_w3l">
 		<div class="col-md-3 footer-left">
 			<h2><a href="index.html"><span>E</span>lsa Shop </a></h2>
-			<p>Lorem ipsum quia dolor
-			sit amet, consectetur, adipisci velit, sed quia non 
-			numquam eius modi tempora.</p>
+			<p>Manish Yadav</p>
 			<ul class="social-nav model-3d-0 footer-social w3_agile_social two">
 															<li><a href="#" class="facebook">
 																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
@@ -2128,7 +2121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="clearfix"></div>
 			<div class="agile_newsletter_footer">
 					<div class="col-sm-6 newsleft">
-				<h3>SIGN UP FOR NEWSLETTER !</h3>
+				<h3>Hope you enjoy!</h3>
 			</div>
 			<div class="col-sm-6 newsright">
 				<form action="#" method="post">
@@ -2155,7 +2148,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="login-grids">
 								<div class="login">
 									<div class="login-bottom">
-										<h3>Sign up for free</h3>
+										<h3>Shope here again</h3>
 										<form>
 											<div class="sign-up">
 												<h4>Email :</h4>
