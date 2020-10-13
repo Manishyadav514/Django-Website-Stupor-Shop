@@ -3,6 +3,10 @@ from django.contrib.auth.models import User, auth
 # Create your views here.
 # To change handle the dstination from here
 
+def about(request):
+    return render(request, 'about.html' )
+
+
 
 def login(request):
     if request.method=='POST':

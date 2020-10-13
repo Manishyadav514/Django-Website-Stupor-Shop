@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('SavanaApp.urls')),
     path('admin/', admin.site.urls),
-    path('account/', include('account.urls'))
+    path('account/', include('account.urls')),
+    path('cart/', include('cart.urls'))
 ]
