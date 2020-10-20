@@ -21,7 +21,21 @@
 </head>
 <body>
 
- 
+
+
+<!-- header -->
+<div class="header" id="home">
+	<div class="container">
+		<ul>
+			<nav class="main_nav">
+				<ul class="d-flex flex-row align-items-start justify-content-start">
+					<li><i aria-hidden="true"></i> </li>
+				</ul>
+			</nav>
+		</ul>
+	</div>
+</div>
+<!-- //header -->
 <!-- header-bot -->
 <div class="header-bot">
 	<div class="header-bot_inner_wthreeinfo_header_mid">
@@ -36,44 +50,73 @@
 		<div class="clearfix"></div>
 	</div>
 </div>
+<!-- header -->
+<div class="header" id="home">
+	<div class="container">
+		<ul>
+			<nav class="main_nav">
+				<ul class="d-flex flex-row align-items-start justify-content-start">
+					<li><i aria-hidden="true"></i> </li>
+				</ul>
+			</nav>
+		</ul>
+	</div>
+</div>
+<!-- //header -->
 <!-- /banner_bottom_agile_info -->
 <div class="page-head_agile_info_w3l">
 		<div class="container">
-			<h3>Sign in </span></h3>
+			<h3>User <span>Profile </span></h3>
 				<!--/w3_short-->
 				<div class="services-breadcrumb">
 						<div class="agile_inner_breadcrumb">
 						   <ul class="w3_short">
 								<li><a href="/">Home</a><i>|</i></li>
-								<li>Sign in</a></li>
+								<li>User Profile</a></li>
 							</ul>
 						</div>
 				</div>
 	  			 <!--//w3_short-->
 	</div>
 </div>
-
-
-
-
-<!-- //for login -->
+    
 <body>
-    <h1>Enter your details:</h1>
-    <form action="login" method="post">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="username"><br>
-        <input type="password" name="password" placeholder="password"><br>
-        <input type="Submit">
-        
-    </form>
-    <div>
-        {% for message in messages %}
-        <h3> {{message}} </h3>
-        {% endfor %}
-    <div>
-        
+    {% if user.is_authenticated %}
+    <li>Name of the User: {{user.first_name}} {{user.last_name}}</li>
+    <li>Email id: {{user.email}}</li>
+    <li>Username: {{user.username}}</li>
+
+    {% else%}
+    <!-- User authenticated -->
+    <li><a href="account/register"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Hello, Sign up</a></li>
+    <li><a href="account/login"> <i class="fa fa-unlock-alt" aria-hidden="true"></i>Hello, Sign in</a></li>
+    <li><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us: www.ashoka.edu.in</a></li>
+    {% endif %}
 </body>
-<!-- //for login -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
